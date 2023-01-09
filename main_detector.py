@@ -5,13 +5,13 @@ import yolov5
 import numpy as np
 import torch
 import torchvision.ops.boxes as bops
-from norfair_funciones import *
+from functions.norfair_functions import *
 import pandas as pd
 import math
 
-from funciones import *
-from mapas import *
-from images import *
+from functions.functions import *
+from functions.maps import *
+from functions.images import *
 
 import norfair
 from norfair import Detection, Tracker, Video, Paths
@@ -26,7 +26,6 @@ DISTANCE_THRESHOLD_BBOX: float = 2.33
 MAX_DISTANCE: int = 100000
 
 current_dir = os.getcwd()
-print(current_dir)
 
 for file in os.listdir(current_dir + "/weights"):
     if file.endswith(".pt"):

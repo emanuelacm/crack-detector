@@ -19,11 +19,6 @@ import pandas as pd
 from skimage.measure import label, regionprops_table
 
 
-carpetas = ['grietas_longitudinales','grietas_transversales','grietas_cocodrilo']
-
-pixel_h = 0.0006348867037195382
-pixel_w = 0.0006241547903880162
-
 def delete_excess(root):
 
     dirlist = [ item for item in os.listdir(root) if os.path.isdir(os.path.join(root, item)) ]
@@ -54,8 +49,6 @@ def delete_excess(root):
         [os.remove(os.path.join(path,file2delete)) for file2delete in files2delete]
 
 
-    
-#[delete_excess(carpeta) for carpeta in carpetas]
 
 images = [os.path.join(dirpath,f) for (dirpath, dirnames, filenames) in os.walk('grietas') for f in filenames]
 
